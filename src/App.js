@@ -1,7 +1,6 @@
 import { Button } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import  SendIcon  from '@mui/icons-material/Send'
-import { theme } from './theme';
 
 // The theme is imported in the index page and rappered inside 
 const useStyles = makeStyles((theme)=> ({
@@ -10,22 +9,24 @@ const useStyles = makeStyles((theme)=> ({
   }
 }))
 
-function App() {
+
+const App = () => {
   const classes = useStyles()
+  console.log(classes)
   return (
     <div className="App">
       <header className="App-header">
       
       </header>
-      <Button variant="outlined" startIcon={<SendIcon />}>Contained</Button>
-      <Button variant="contained" disabled>
+      <Button className={classes.button} variant="outlined" startIcon={<SendIcon />}>Contained</Button>
+      <Button className={classes.button} variant="contained" disabled>
         Disabled
       </Button>
-      <Button variant="outlined" href="#contained-buttons" endIcon={<SendIcon />}>
+      <Button className={classes.button} variant="outlined" href="#contained-buttons" endIcon={<SendIcon />}>
         Link
       </Button>
 
-      <Button variant="outlined" href="#contained-buttons" className={classes.button}>
+      <Button className={classes.button} variant="contained">
         Link
       </Button>
     </div>
@@ -33,3 +34,6 @@ function App() {
 }
 
 export default App;
+
+
+
