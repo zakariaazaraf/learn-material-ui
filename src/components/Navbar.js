@@ -6,6 +6,7 @@ import Badge from '@mui/material/Badge';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import { Avatar } from '@mui/material';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -39,6 +40,20 @@ const useStyles = makeStyles((theme) => ({
   input: {
     color: '#FFF',
     marginLeft: theme.spacing(1.5)
+  },
+  icons: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  avatar: {
+    [theme.breakpoints.up('sm')]: {
+      width: '32px',
+      height: '32px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '28px',
+      height: '28px',
+    },
   }
 }))
 
@@ -68,7 +83,7 @@ const Navbar = () => {
                 </Badge>
               </IconButton>
 
-              <IconButton
+              {/* <IconButton
                 size="large"
                 aria-label="account of current user"
                 aria-controls="primary-search-account-menu"
@@ -76,6 +91,9 @@ const Navbar = () => {
                 color="inherit"
               >
                 <AccountCircle />
+              </IconButton> */}
+              <IconButton>
+                <Avatar alt="Remy Sharp" src="/images/avatarProfile.jpg" className={classes.avatar}/>
               </IconButton>
               </div>
             </Toolbar>
