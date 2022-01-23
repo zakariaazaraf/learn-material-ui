@@ -35,7 +35,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
     borderRadius: theme.shape.borderRadius,
-    width: '40%'
+    width: '40%',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
   },
   input: {
     color: '#FFF',
@@ -67,6 +70,7 @@ const Navbar = () => {
                 <Search />
                 <InputBase placeholder='Search' className={classes.input}/>
               </div>
+              <Search />
               <div className={classes.icons}>
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                   <Badge badgeContent={5} color="error">
