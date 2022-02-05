@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme)=> ({
 
 const App = () => {
   const classes = useStyles()
-  console.log(classes)
   return (
     <div className="App">
         <Navbar />

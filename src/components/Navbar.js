@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@mui/styles'
 import { AppBar, InputBase, Toolbar, Typography, alpha, IconButton } from '@mui/material';
 import { Search } from '@material-ui/icons';
@@ -73,11 +73,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   searchSmIcon: {
-    [theme.breakpoints.up('sm')]: {
-      display: 'none'
-    },
     [theme.breakpoints.down('sm')]: {
-      display: 'block'
+      // display: (props) => props.open ? "none !important" : "inline-block important",
+
     }
   }
 }))
@@ -85,6 +83,11 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
   const [open, setOpen] = useState(false)
   const classes = useStyles({ open })
+  // The fucking useStyle doesn't uses my classes as important, so fuck of now.
+  useEffect(() => {
+      let searchSmIcon = document.querySelector(`.${classes.searchSmIcon}`);
+      searchSmIcon.style.display = open ? 'none' : 'inline-block'
+  }, [open])
   
   return <AppBar>
             <Toolbar className={classes.toolbar}>
