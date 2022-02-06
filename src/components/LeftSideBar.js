@@ -15,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
   list: {
     // backgroundColor: 'blue',
     // color: '#FFF'
+  },
+
+  text:{
+    [theme.breakpoints.down('sm')]:{
+      display: 'none'
+    }
   }
 }))
 
@@ -27,14 +33,14 @@ function LeftSideBar() {
         <ListItemIcon>
           <Inbox />
         </ListItemIcon>
-        <ListItemText primary='This the text' />
+        <ListItemText primary='This the text' className={classes.text}/>
       </ListItem>
 
       <ListItem button>
         <ListItemIcon>
           <Email />
         </ListItemIcon>
-        <ListItemText primary='This the text' />
+        <ListItemText primary='This the text' className={classes.text}/>
       </ListItem>
 
 
@@ -42,49 +48,49 @@ function LeftSideBar() {
         <ListItemIcon>
           <Drafts />
         </ListItemIcon>
-        <ListItemText primary='This the text' />
+        <ListItemText primary='This the text' className={classes.text}/>
       </ListItem>
 
       <ListItem button>
         <ListItemIcon>
           <ConfirmationNumber />
         </ListItemIcon>
-        <ListItemText primary='This the text' />
+        <ListItemText primary='This the text' className={classes.text}/>
       </ListItem>
 
       <ListItem button>
         <ListItemIcon>
           <ContactMail />
         </ListItemIcon>
-        <ListItemText primary='This the text' />
+        <ListItemText primary='This the text' className={classes.text}/>
       </ListItem>
 
       <ListItem button>
         <ListItemIcon>
           <ShoppingCart />
         </ListItemIcon>
-        <ListItemText primary='This the text' />
+        <ListItemText primary='This the text' className={classes.text}/>
       </ListItem>
 
       <ListItem button>
         <ListItemIcon>
           <Settings />
         </ListItemIcon>
-        <ListItemText primary='This the text' />
+        <ListItemText primary='This the text' className={classes.text}/>
       </ListItem>
 
       <ListItem button>
         <ListItemIcon>
           <Menu />
         </ListItemIcon>
-        <ListItemText primary='This the text' />
+        <ListItemText primary='This the text' className={classes.text}/>
       </ListItem>
 
       <ListItem button>
         <ListItemIcon>
           <Markunread />
         </ListItemIcon>
-        <ListItemText primary='This the text' />
+        <ListItemText primary='This the text' className={classes.text}/>
       </ListItem>
   </List>
   </>;

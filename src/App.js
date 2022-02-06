@@ -17,11 +17,16 @@ const useStyles = makeStyles((theme)=> ({
   },
 
   feed: {
-    // padding: theme.spacing(2)
   },
 
   LeftSideBar:{
       // paddingTop: '0px !important'
+  },
+
+  RightSideBar:{
+    [theme.breakpoints.down('sm')]:{
+      display: 'none'
+    }
   }
 }))
 
@@ -40,7 +45,7 @@ const App = () => {
             <Feeds />
           </Grid>
 
-          <Grid item xs={0} md={3}>
+          <Grid item md={3} className={classes.RightSideBar}>
             <RightSideBar />
           </Grid>
 
