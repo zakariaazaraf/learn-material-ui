@@ -3,7 +3,6 @@ import { makeStyles } from '@mui/styles'
 import { AppBar, InputBase, Toolbar, Typography, alpha, IconButton } from '@mui/material';
 import { Search } from '@material-ui/icons';
 import Badge from '@mui/material/Badge';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { Avatar } from '@mui/material';
@@ -11,6 +10,11 @@ import { Cancel } from '@mui/icons-material';
 
 
 const useStyles = makeStyles((theme) => ({
+
+  header:{
+    position: 'static',
+    // marginBottom: theme.spacing(3)
+  },
 
   toolbar: {
     dispaly: 'flex',
@@ -77,6 +81,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       display: "none"
     }
+  },
+
+  cancel:{
+    [theme.breakpoints.up('sm')]: {
+      display: 'none !important'
+    }
   }
 }))
 
@@ -89,7 +99,7 @@ const Navbar = () => {
   //     searchSmIcon.style.display = open ? 'none' : 'inline-block'
   // }, [open])
   
-  return <AppBar>
+  return <AppBar className={classes.header}>
             <Toolbar className={classes.toolbar}>
               <Typography variant='h5' component='a' className={classes.logoLG}>Logo LG</Typography>
               <Typography variant='h6' component='a' className={classes.logoSM}>Logo SM</Typography>
