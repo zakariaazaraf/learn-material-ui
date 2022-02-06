@@ -7,6 +7,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { Avatar } from '@mui/material';
+import { Cancel } from '@mui/icons-material';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -95,6 +96,7 @@ const Navbar = () => {
               <div className={classes.search}>
                 <Search />
                 <InputBase placeholder='Search' className={classes.input} fullWidth/>
+                <Cancel className={classes.cancel} onClick={() => setOpen(!open) }/>
               </div>
 
               <div className={classes.icons}>
