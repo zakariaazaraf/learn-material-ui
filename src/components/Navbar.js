@@ -73,9 +73,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   searchSmIcon: {
-    [theme.breakpoints.down('sm')]: {
-      // display: (props) => props.open ? "none !important" : "inline-block important",
-
+    [theme.breakpoints.up('sm')]: {
+      display: "none"
     }
   }
 }))
@@ -84,10 +83,10 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const classes = useStyles({ open })
   // The fucking useStyle doesn't uses my classes as important, so fuck of now.
-  useEffect(() => {
-      let searchSmIcon = document.querySelector(`.${classes.searchSmIcon}`);
-      searchSmIcon.style.display = open ? 'none' : 'inline-block'
-  }, [open])
+  // useEffect(() => {
+  //     let searchSmIcon = document.querySelector(`.${classes.searchSmIcon}`);
+  //     searchSmIcon.style.display = open ? 'none' : 'inline-block'
+  // }, [open])
   
   return <AppBar>
             <Toolbar className={classes.toolbar}>
@@ -97,9 +96,9 @@ const Navbar = () => {
                 <Search />
                 <InputBase placeholder='Search' className={classes.input} fullWidth/>
               </div>
-              <Search className={classes.searchSmIcon} onClick={()=>{setOpen(!open)}}/>
 
               <div className={classes.icons}>
+                <Search className={classes.searchSmIcon} onClick={()=>{setOpen(!open)}}/> 
 
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                     <Badge badgeContent={5} color="error">
