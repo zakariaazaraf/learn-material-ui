@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles'
-import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Link, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { 
   Inbox, Email, Drafts,
    ConfirmationNumber, ContactMail,
@@ -29,36 +29,46 @@ function LeftSideBar() {
 
   return <>
   <List className={classes.list}>
-      <ListItem button>
-        <ListItemIcon>
-          <Inbox />
-        </ListItemIcon>
-        <ListItemText primary='This the text' className={classes.text}/>
-      </ListItem>
+      
+      <Link href='/' underline='none'>
+        <ListItem button>
+          <ListItemIcon>
+            <Inbox />
+          </ListItemIcon>
+          <ListItemText primary='Properties list' className={classes.text}/>
+        </ListItem>
+      </Link>
 
-      <ListItem button>
-        <ListItemIcon>
-          <Email />
-        </ListItemIcon>
-        <ListItemText primary='This the text' className={classes.text}/>
-      </ListItem>
+     
+      <Link href='/propertiesDetails' underline='none'>
+        <ListItem button>
+          <ListItemIcon>
+            <Email />
+          </ListItemIcon>
+          <ListItemText primary='Properties details' className={classes.text}/>
+        </ListItem>
+      </Link>
 
 
-      <ListItem button>
-        <ListItemIcon>
-          <Drafts />
-        </ListItemIcon>
-        <ListItemText primary='This the text' className={classes.text}/>
-      </ListItem>
+      <Link href='/agencies' underline='none'>
+        <ListItem button>
+          <ListItemIcon>
+            <Drafts />
+          </ListItemIcon>
+          <ListItemText primary='Agencies list' className={classes.text}/>
+        </ListItem>
+      </Link>
 
-      <ListItem button>
-        <ListItemIcon>
-          <ConfirmationNumber />
-        </ListItemIcon>
-        <ListItemText primary='This the text' className={classes.text}/>
-      </ListItem>
+      <Link href='/autocomplete' underline='none'>
+        <ListItem button>
+          <ListItemIcon>
+            <ConfirmationNumber />
+          </ListItemIcon>
+          <ListItemText primary='Auto complete' className={classes.text}/>
+        </ListItem>
+      </Link>
 
-      <ListItem button>
+      {/* <ListItem button>
         <ListItemIcon>
           <ContactMail />
         </ListItemIcon>
@@ -91,7 +101,7 @@ function LeftSideBar() {
           <Markunread />
         </ListItemIcon>
         <ListItemText primary='This the text' className={classes.text}/>
-      </ListItem>
+      </ListItem> */}
   </List>
   </>;
 }

@@ -4,6 +4,10 @@ import { Grid } from '@mui/material';
 import LeftSideBar from './components/LeftSideBar'
 import Feeds from './components/Feeds'
 import RightSideBar from './components/RightSideBar'
+import { BrowserRouter as Router, Route, Routes, Switch} from 'react-router-dom'
+import PropertiesList from './components/PropertiesList';
+
+
 
 
 // The theme is imported in the index page and rappered inside 
@@ -35,14 +39,21 @@ const App = () => {
   const classes = useStyles()
   return (
     <div className="App">
+      <Router>
         <Navbar />
         <Grid container spacing={2} className={classes.container}>
           <Grid item xs={2} md={2} className={classes.LeftSideBar}>
             <LeftSideBar />
           </Grid>
-
           <Grid item xs={10} md={7} className={classes.feed}>
-            <Feeds />
+            {/* <Feeds /> */}
+            <Routes>
+            <Route exact path='/' element={<PropertiesList />} />
+            <Route exact path='/propertiesList' element={<PropertiesList />} />
+            <Route exact path='/propertiesDetails' />
+            <Route exact path='/agencies' />
+            <Route exact path='/autocomplete' />
+          </Routes>
           </Grid>
 
           <Grid item md={3} className={classes.RightSideBar}>
@@ -50,6 +61,7 @@ const App = () => {
           </Grid>
 
         </Grid>
+      </Router>
 
     </div>
   );

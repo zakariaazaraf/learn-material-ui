@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.estate-container .estate .estate-img {
+  width: 400px;
+  height: 300px;
+}
