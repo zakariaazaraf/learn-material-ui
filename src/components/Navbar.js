@@ -5,7 +5,7 @@ import { Search } from '@material-ui/icons';
 import Badge from '@mui/material/Badge';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { Avatar } from '@mui/material';
+import { Avatar, Link } from '@mui/material';
 import { Cancel } from '@mui/icons-material';
 
 
@@ -21,7 +21,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     flexWrap: 'wrap',
   },
-
+  logo: {
+    color: '#ffffff',
+    fontSize: '20px',
+    fontWeight: 'bold',
+    cursor: 'pointer'
+  },
   logoSM: {
     display: 'none',
     [theme.breakpoints.down('sm')] : {
@@ -101,8 +106,8 @@ const Navbar = () => {
   
   return <AppBar className={classes.header}>
             <Toolbar className={classes.toolbar}>
-              <Typography variant='h5' component='a' className={classes.logoLG}>Logo LG</Typography>
-              <Typography variant='h6' component='a' className={classes.logoSM}>Logo SM</Typography>
+              <Link href='/' className={`${classes.logoLG} ${classes.logo}`}>Logo LG</Link>
+              <Link href='/' className={`${classes.logoSM} ${classes.logo}`}>Logo SM</Link>
               <div className={classes.search}>
                 <Search />
                 <InputBase placeholder='Search' className={classes.input} fullWidth/>

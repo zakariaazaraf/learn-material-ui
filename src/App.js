@@ -6,6 +6,7 @@ import Feeds from './components/Feeds'
 import RightSideBar from './components/RightSideBar'
 import { BrowserRouter as Router, Route, Routes, Switch} from 'react-router-dom'
 import PropertiesList from './components/PropertiesList';
+import AgenciesList from './components/AgenciesList';
 
 
 
@@ -51,7 +52,7 @@ const App = () => {
             <Route exact path='/' element={<PropertiesList />} />
             <Route exact path='/propertiesList' element={<PropertiesList />} />
             <Route exact path='/propertiesDetails' />
-            <Route exact path='/agencies' />
+            <Route exact path='/agencies' element={<AgenciesList />}/>
             <Route exact path='/autocomplete' />
           </Routes>
           </Grid>
