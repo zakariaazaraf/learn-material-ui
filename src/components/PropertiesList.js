@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react'
+import { Grid } from '@mui/material';
+
 
 const PropertiesList = () => {
     const [states, setStates] = useState([]);
@@ -33,15 +35,15 @@ const PropertiesList = () => {
     }
 
 
-  return <section className='estate-container'>
+  return <Grid container className='estate-container'>
       {
         isReady 
         ? 
             states.map(state => {
             const {id, agency, area, baths, category, contactName, coverPhoto: {url}, phoneNumber: {mobile, phone, whatsapp}, price, title, title_l1, externalID} = state
-            return <article key={id} className='estate'>
-                <h2>{title}</h2>
-                <h3>{title_l1}</h3>
+            return <Grid item key={id} className='estate' xs={12} md={6} lg={4}>
+                <h3>{title}</h3>
+                <h4>{title_l1}</h4>
                 <img className='estate-img' src={url} alt={title_l1}></img>
                 <h4>contactName: {contactName}</h4>
                 <div><span>Price: {price}</span></div>
@@ -50,12 +52,12 @@ const PropertiesList = () => {
                 <div><span>{mobile && `Mobile: ${mobile}`}</span></div>
                 <div><span>{phone && `Phone: ${phone}`}</span></div>
                 <div><span>{whatsapp && `whatsapp: ${whatsapp}`}</span></div>
-            </article>
+            </Grid>
             }) 
         : 
         <h3>Data is loading ...</h3>
       }
-  </section>
+  </Grid>
 }
 
 export default PropertiesList

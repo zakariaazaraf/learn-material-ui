@@ -1,3 +1,4 @@
+import { Grid } from '@mui/material';
 import React, {useState, useEffect} from 'react'
 
 const AgenciesList = () => {
@@ -34,13 +35,13 @@ const AgenciesList = () => {
     }
 
 
-  return <section className='estate-container'>
+  return <Grid container spacing={2} className='estate-container'>
       {
         isReady 
         ? 
             agencies.map(agency => {
             const {id, location, location_l1, name, name_l1, logo: {url}, phoneNumber: {mobile, phone, whatsapp}} = agency
-            return <article key={id} className='estate'>
+            return <Grid item key={id} xs={12} md={6} lg={4} className='estate'>
                     <h2>{name}</h2>
                     <h3>{name_l1}</h3>
                     <img className='estate-img' src={url} alt={name_l1}></img>
@@ -48,12 +49,12 @@ const AgenciesList = () => {
                     <div><span>{mobile && `Mobile: ${mobile}`}</span></div>
                     <div><span>{phone && `Phone: ${phone}`}</span></div>
                     <div><span>{whatsapp && `whatsapp: ${whatsapp}`}</span></div>
-                </article>
+                </Grid>
             }) 
         : 
         <h3>Data is loading ...</h3>
       }
-  </section>
+  </Grid>
 }
 
 export default AgenciesList

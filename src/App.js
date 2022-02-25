@@ -46,7 +46,7 @@ const App = () => {
           <Grid item xs={2} md={2} className={classes.LeftSideBar}>
             <LeftSideBar />
           </Grid>
-          <Grid item xs={10} md={7} className={classes.feed}>
+          <Grid item xs={10} md={10} className={classes.feed}>
             {/* <Feeds /> */}
             <Routes>
             <Route exact path='/' element={<PropertiesList />} />
@@ -57,9 +57,9 @@ const App = () => {
           </Routes>
           </Grid>
 
-          <Grid item md={3} className={classes.RightSideBar}>
+          {/* <Grid item md={3} className={classes.RightSideBar}>
             <RightSideBar />
-          </Grid>
+          </Grid> */}
 
         </Grid>
       </Router>
