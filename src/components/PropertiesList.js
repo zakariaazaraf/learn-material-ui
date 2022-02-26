@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { CircularProgress, Grid } from '@mui/material';
+import { Link } from '@material-ui/core';
 
 
 const PropertiesList = () => {
@@ -42,16 +43,18 @@ const PropertiesList = () => {
             states.map(state => {
             const {id, agency, area, baths, category, contactName, coverPhoto: {url}, phoneNumber: {mobile, phone, whatsapp}, price, title, title_l1, externalID} = state
             return <Grid item key={id} className='estate' xs={12} md={6} lg={4}>
-                <h3>{title}</h3>
-                <h4>{title_l1}</h4>
-                <img className='estate-img' src={url} alt={title_l1}></img>
-                <h4>contactName: {contactName}</h4>
-                <div><span>Price: {price}</span></div>
-                <div><span>Area: {area}</span></div>
-                <div><span>Bathrooms: {baths}</span></div>
-                <div><span>{mobile && `Mobile: ${mobile}`}</span></div>
-                <div><span>{phone && `Phone: ${phone}`}</span></div>
-                <div><span>{whatsapp && `whatsapp: ${whatsapp}`}</span></div>
+                <Link href ={`/propertiesDetails/${externalID}`} >
+                    <h3>{title}</h3>
+                    <h4>{title_l1}</h4>
+                    <img className='estate-img' src={url} alt={title_l1}></img>
+                    <h4>contactName: {contactName}</h4>
+                    <div><span>Price: {price}</span></div>
+                    <div><span>Area: {area}</span></div>
+                    <div><span>Bathrooms: {baths}</span></div>
+                    <div><span>{mobile && `Mobile: ${mobile}`}</span></div>
+                    <div><span>{phone && `Phone: ${phone}`}</span></div>
+                    <div><span>{whatsapp && `whatsapp: ${whatsapp}`}</span></div>
+                </Link>
             </Grid>
             }) 
         : 
