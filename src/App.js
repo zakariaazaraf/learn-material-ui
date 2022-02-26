@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes, Switch} from 'react-router-dom'
 import PropertiesList from './components/PropertiesList';
 import AgenciesList from './components/AgenciesList';
 import PropertyDetail from './components/PropertyDetail';
+import AutoComplete from './components/AutoComplete';
 
 
 
@@ -54,7 +55,7 @@ const App = () => {
             <Route exact path='/propertiesList' element={<PropertiesList />} />
             <Route exact path='/propertiesDetails/:externalID' element={<PropertyDetail />}/>
             <Route exact path='/agencies' element={<AgenciesList />}/>
-            <Route exact path='/autocomplete' />
+            <Route exact path='/autocomplete' element={<AutoComplete />}/>
           </Routes>
           </Grid>
 
