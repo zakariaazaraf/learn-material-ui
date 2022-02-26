@@ -1,3 +1,4 @@
+import { CircularProgress } from '@material-ui/core';
 import { Grid } from '@mui/material';
 import React, {useState, useEffect} from 'react'
 
@@ -13,7 +14,6 @@ const AgenciesList = () => {
         try {
             /* Think to add the search, so you don't put something static such as `a` as the agency name*/
             const response = await fetch(`https://bayut.p.rapidapi.com/agencies/list?query=a&hitsPerPage=25`, {
-        
                 "headers": {
                     "x-rapidapi-host": "bayut.p.rapidapi.com",
                     "x-rapidapi-key": "2f8126bea7mshdf5675490dfb0a3p11b801jsn0452e1e62c57"
@@ -52,7 +52,7 @@ const AgenciesList = () => {
                 </Grid>
             }) 
         : 
-        <h3>Data is loading ...</h3>
+        <CircularProgress />
       }
   </Grid>
 }

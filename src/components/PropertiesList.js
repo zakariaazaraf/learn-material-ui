@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Grid } from '@mui/material';
+import { CircularProgress, Grid } from '@mui/material';
 
 
 const PropertiesList = () => {
@@ -55,7 +55,7 @@ const PropertiesList = () => {
             </Grid>
             }) 
         : 
-        <h3>Data is loading ...</h3>
+        <CircularProgress />
       }
   </Grid>
 }
