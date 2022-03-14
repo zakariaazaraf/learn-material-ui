@@ -44,7 +44,7 @@ const App = () => {
     <div className="App">
       <Router>
         <Navbar />
-        <Grid container spacing={2} className={classes.container}>
+        <Grid container spacing={2} className={classes.container} minHeight={`100vh`}>
           <Grid item xs={2} md={2} className={classes.LeftSideBar}>
             <LeftSideBar />
           </Grid>

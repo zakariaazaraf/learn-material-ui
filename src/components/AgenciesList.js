@@ -35,7 +35,7 @@ const AgenciesList = () => {
     }
 
 
-  return <Grid container spacing={2} className='estate-container'>
+  return <Grid container spacing={2} className='estate-container' justifyContent = {'center'} alignItems={`center`} height={`100%`}>
       {
         isReady 
         ? 
@@ -52,7 +52,7 @@ const AgenciesList = () => {
                 </Grid>
             }) 
         : 
-        <CircularProgress />
+        <CircularProgress size={100}/>
       }
   </Grid>
 }

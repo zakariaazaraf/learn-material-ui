@@ -30,7 +30,7 @@ function LeftSideBar() {
   return <>
   <List className={classes.list}>
       
-      <Link href='/' underline='none'>
+      <Link href='/propertiesList' underline='none'>
         <ListItem button>
           <ListItemIcon>
             <Inbox />
@@ -38,17 +38,6 @@ function LeftSideBar() {
           <ListItemText primary='Properties list' className={classes.text}/>
         </ListItem>
       </Link>
-
-     
-      <Link href='/propertiesDetails' underline='none'>
-        <ListItem button>
-          <ListItemIcon>
-            <Email />
-          </ListItemIcon>
-          <ListItemText primary='Properties details' className={classes.text}/>
-        </ListItem>
-      </Link>
-
 
       <Link href='/agencies' underline='none'>
         <ListItem button>

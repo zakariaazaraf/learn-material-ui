@@ -1,11 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import { CircularProgress, Grid } from '@mui/material';
 import { Link } from '@material-ui/core';
+import { makeStyles } from '@mui/styles'
 
+
+
+const useStyles = makeStyles((theme) => ({
+    mainContainer: {
+        
+    }
+
+}))
 
 const PropertiesList = () => {
     const [states, setStates] = useState([]);
     const [isReady, setIsReady] = useState(false);
+    const classes = useStyles()
 
     useEffect(() => {
         fetchStates()
@@ -36,7 +46,7 @@ const PropertiesList = () => {
     }
 
 
-  return <Grid container className='estate-container'>
+  return <Grid container className={`estate-container`} justifyContent = {'center'} alignItems={`center`} height={`100%`}>
       {
         isReady 
         ? 
@@ -58,7 +68,9 @@ const PropertiesList = () => {
             </Grid>
             }) 
         : 
-        <CircularProgress />
+        <Grid>
+            <CircularProgress size={100}/>
+        </Grid>
       }
   </Grid>
 }

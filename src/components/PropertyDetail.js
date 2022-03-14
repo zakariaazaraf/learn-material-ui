@@ -28,7 +28,6 @@ const PropertyDetail = () => {
                 const data = await response.json()
                 setPropertyDetail(data)
                 setIsReady(true)
-                console.log(data)
             } else {
                 console.log('loding ...')
             }
@@ -75,7 +74,7 @@ const PropertyDetail = () => {
         </Grid>
     }
 
-    return <CircularProgress />
+    return <CircularProgress size={100}/>
 
     
 }
