@@ -47,8 +47,8 @@ const PropertyDetail = () => {
                 <img src={agencyLogo} alt={name}/>
             </Grid> */}
             <Grid item  xs={12}>
-                <ImageList variant="masonry" cols={4} gap={4}>
-                    {photos.map(photo => (
+                <ImageList variant="masonry" cols={4} gap={4} xs={{cols: 2}}>
+                    {photos.map(photo => 
                         <ImageListItem key={photo.id}>
                             <img
                                 src={`${photo.url}?w=248&fit=crop&auto=format`}
@@ -57,7 +57,7 @@ const PropertyDetail = () => {
                                 loading="lazy"
                             />
                         </ImageListItem>
-                    ))}
+                    )}
                 </ImageList>
             </Grid>
             <Grid item  xs={12}>
@@ -74,7 +74,9 @@ const PropertyDetail = () => {
         </Grid>
     }
 
-    return <CircularProgress size={100}/>
+    return <Grid container className={`estate-container`} justifyContent = {'center'} alignItems={`center`} height={`100%`}>
+            <CircularProgress size={100}/>
+        </Grid>
 
     
 }

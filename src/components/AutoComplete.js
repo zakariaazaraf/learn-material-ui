@@ -84,7 +84,7 @@ const AutoComplete = () => {
                     </Grid>
                 </Grid>
             </form>
-            <Grid item xm={12}>
+            <Grid container justifyContent = {'center'} alignItems={`center`} marginTop={25}>
                 <CircularProgress />
             </Grid>
         </> 
