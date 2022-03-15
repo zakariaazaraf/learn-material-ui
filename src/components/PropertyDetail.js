@@ -1,11 +1,28 @@
 import React, {useState, useEffect} from 'react'
 import { CircularProgress, Grid, ImageList, ImageListItem } from '@mui/material';
 import { useParams } from 'react-router-dom';
+import { makeStyles } from '@mui/styles'
 
+
+const useStyles = makeStyles((theme) => ({
+    iamgesListContainer: {
+        
+        [theme.breakpoints.down('lg')] : {
+            columnCount: '3 !important',
+        },
+        [theme.breakpoints.down('md')] : {
+            columnCount: '2 !important',
+        },
+        [theme.breakpoints.down('sm')] : {
+            columnCount: '1 !important',
+        }
+    }
+}))
 
 const PropertyDetail = () => {
     const [PropertyDetail, setPropertyDetail] = useState({});
     const [isReady, setIsReady] = useState(false);
+    const classes = useStyles()
 
     const { externalID } = useParams()
 
@@ -47,7 +64,7 @@ const PropertyDetail = () => {
                 <img src={agencyLogo} alt={name}/>
             </Grid> */}
             <Grid item  xs={12}>
-                <ImageList variant="masonry" cols={4} gap={4} xs={{cols: 2}}>
+                <ImageList variant="masonry" cols={4} gap={2} className={classes.iamgesListContainer}>
                     {photos.map(photo => 
                         <ImageListItem key={photo.id}>
                             <img
